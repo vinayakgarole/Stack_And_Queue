@@ -6,27 +6,38 @@ public class StackAndQueue {
 
     public static void main(String[] args) {
 
-        int choice;
+        int choice = 0;
         Scanner sc = new Scanner(System.in);
-        Operation operation = new Operation();
+        Stack s = new Stack();
 
-        do {
-            System.out.println("Enter the options:\n1. To push the data\n2. Display the Stack\n3. To exit");
+        while (choice != 4) {
+            System.out.println("Chose one from the below options ");
+            System.out.println("\n1.Push\n2.Pop\n3.Show\n4.Exit");
+            System.out.println("Enter your choice: ");
+
             choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
-                    operation.push(sc);
+                    s.push(sc);
                     break;
+
                 case 2:
-                    operation.display();
+                    s.pop();
                     break;
+
                 case 3:
+                    s.display();
                     break;
+
+                case 4:
+                    System.out.println("Exit the program");
+                    System.exit(0);
+                    break;
+
                 default:
-                    System.out.println("Enter invalid input");
-                    break;
+                    System.out.println("Please Enter valid choice ");
             }
-        } while (choice != 3);
+        }
     }
 }
